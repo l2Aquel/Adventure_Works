@@ -23,13 +23,13 @@ This dashboard was developed using:
 - Period: January 2020 to June 2022
 - Volume: 25.2K Orders, 17.4K Unique Customers
 - Fact Tables:
-  Sales_Data: Tracks every individual order, quantity, and transaction date.
-  Returns_Data: Records returned items and return dates for quality auditing.
+  - Sales_Data: Tracks every individual order, quantity, and transaction date.
+  - Returns_Data: Records returned items and return dates for quality auditing.
 - Dimension Tables (Lookups):
-  Customer_Lookup: Contains demographic data (Occupation, Income, Education, and Gender).
-  Product_Lookup: Stores product details, categories, subcategories, and pricing/costing.
-  Calendar_Lookup: A specialized time-table used for Seasonality and Time-Intelligence analysis.
-  Territory_Lookup: Maps sales performance to global regions (North America, Europe, Pacific).
+  - Customer_Lookup: Contains demographic data (Occupation, Income, Education, and Gender).
+  - Product_Lookup: Stores product details, categories, subcategories, and pricing/costing.
+  - Calendar_Lookup: A specialized time-table used for Seasonality and Time-Intelligence analysis.
+  - Territory_Lookup: Maps sales performance to global regions (North America, Europe, Pacific).
 
 ## 5. Features / Highlights
 
@@ -106,7 +106,7 @@ JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY gender
 ORDER BY revenue DESC;
->SELECT 
+>> SELECT 
 	marital_Status,
 	COUNT(DISTINCT order_number) AS total_orders,
 	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
@@ -115,7 +115,7 @@ JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY marital_Status
 ORDER BY revenue DESC;
-> SELECT 
+>>> SELECT 
 	occupation,
 	COUNT(DISTINCT order_number) AS total_orders,
 	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
@@ -124,7 +124,7 @@ JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY occupation
 ORDER BY revenue DESC;
->SELECT 
+>>> SELECT 
 	education_level,
 	COUNT(DISTINCT order_number) AS total_orders,
 	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
