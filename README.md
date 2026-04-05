@@ -124,7 +124,7 @@ JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY occupation
 ORDER BY revenue DESC;
->>> SELECT 
+>>>> SELECT 
 	education_level,
 	COUNT(DISTINCT order_number) AS total_orders,
 	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
