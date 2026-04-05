@@ -98,36 +98,39 @@ ON s.product_key = p.product_key;
 
 2. Multi-Dimensional Customer Segmentation Analysis: Write a series of queries that aggregate total revenue and order frequency across Gender, Marital Status, Occupation, and Education Level.
 > SELECT 
-	gender,
-	COUNT(DISTINCT order_number) AS total_orders,
-	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
+gender,
+COUNT(DISTINCT order_number) AS total_orders,
+ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
 FROM customer_lookup c
 JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY gender
 ORDER BY revenue DESC;
->> SELECT 
-	marital_Status,
-	COUNT(DISTINCT order_number) AS total_orders,
-	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
+
+> SELECT 
+marital_Status,
+COUNT(DISTINCT order_number) AS total_orders,
+ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
 FROM customer_lookup c
 JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY marital_Status
 ORDER BY revenue DESC;
->>> SELECT 
-	occupation,
-	COUNT(DISTINCT order_number) AS total_orders,
-	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
+
+> SELECT 
+occupation,
+COUNT(DISTINCT order_number) AS total_orders,
+ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
 FROM customer_lookup c
 JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
 GROUP BY occupation
 ORDER BY revenue DESC;
->>>> SELECT 
-	education_level,
-	COUNT(DISTINCT order_number) AS total_orders,
-	ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
+
+> SELECT 
+education_level,
+COUNT(DISTINCT order_number) AS total_orders,
+ROUND(SUM(s.order_quantity * p.product_price),2) as revenue
 FROM customer_lookup c
 JOIN sales_data s ON c.customer_key = s.customer_key
 JOIN product_lookup p ON s.product_key = p.product_key
