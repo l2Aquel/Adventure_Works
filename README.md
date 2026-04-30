@@ -368,4 +368,5 @@ ORDER BY days_between DESC;
 
 ## 7. Screenshots / Demos  
 ![https://github.com/l2Aquel/AdventureWorks_Dashboard/blob/main/AdventureWorks_preview.png](AdventureWorks_preview.png)
+![https://github.com/l2Aquel/Adventure_Works/blob/main/Data_Model.png](Data_Model.png)
 ![https://github.com/l2Aquel/Adventure_Works/blob/main/PostgreSQL.png](PostgreSQL.png)
